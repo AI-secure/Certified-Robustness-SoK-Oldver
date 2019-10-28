@@ -198,7 +198,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ### MNIST
 
-All input images are gray-scale; 28 x 28 size; each pixel is in range [0, 1].
+All input images are grayscale; 28 x 28 size; each pixel is in range [0, 1].
 
 #### L2
 
@@ -261,6 +261,8 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 ### SVHN
 
+The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. When calculating eps, these values are rescaled to [0, 1].
+
 #### L2
 
 ##### eps=0.1
@@ -305,6 +307,8 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 ### Fashion-MNIST
 
+This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0, 1].
+
 #### L-Infty
 
 ##### eps=0.1
@@ -329,7 +333,51 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 4. Besides the on-the-board results, all these papers have their own unique takeaways. For interested reader and stackholders, we recommend not to only value the approach with highest number.
 
-## Reference: Empirical Robustness Bound
+## Reference: Empirical Robustness
+
+For comparison, here we cite numbers from MadryLab repositories for [MNIST challenge](https://github.com/MadryLab/mnist_challenge) and [CIFAR-10 challenge](https://github.com/MadryLab/cifar10_challenge), which records the best attacks towarding their robust model with secret weights.
+
+
+
+### CIFAR-10
+
+#### L-Infty
+
+##### eps=8/255
+
+*Block-Box*
+
+| Attack                                                       | Submitted by    | Accuracy | Submission Date |
+| ------------------------------------------------------------ | --------------- | -------- | --------------- |
+| PGD on the cross-entropy loss for the adversarially trained public network | (initial entry) | 63.39%   | Jul 12, 2017    |
+
+*White-Box*
+
+| Attack        | Submitted by | Accuracy | Submission Date |
+| ------------- | ------------ | -------- | --------------- |
+| MultiTargeted | Sven Gowal   | 44.03%   | Aug 28, 2019    |
+
+
+
+### MNIST
+
+#### L-Infty
+
+##### eps=0.3
+
+*Black-Box*
+
+| Attack                                                       | Submitted by | Accuracy | Submission Date |
+| ------------------------------------------------------------ | ------------ | -------- | --------------- |
+| AdvGAN from ["Generating Adversarial Examples with Adversarial Networks"](https://arxiv.org/abs/1801.02610) | AdvGAN       | 92.76%   | Sep 25, 2017    |
+
+*White-Box*
+
+| Attack                                         | Submitted by  | Accuracy | Submission Date |
+| ---------------------------------------------- | ------------- | -------- | --------------- |
+| First-Order Adversary with Quantized Gradients | Zhuanghua Liu | 88.32%   | Oct 16, 2019    |
+
+
 
 
 ## An (Incomplete) Paper List
@@ -338,133 +386,461 @@ Works in this field include provable training approaches and verification approa
 
 
 
-Exact Verifiers:
+**Exact Verifiers**
 
-- Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks(CAV 2017, arxiv:1702.01135)
-- (Planet) Formal Verification of Piece-Wise Linear Feed-Forward Neural Networks(ISATVA 2017, arxiv: 1705.01320)First proposes ReLU linear relaxations. While don’t know if used.
-- Algorithms for Verifying Deep Neural Networks(arxiv: 1903.06758)This survey covers many earlier-stage SMT-based works, but few latest works in 2018 and 2019.
+- [Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks](https://arxiv.org/abs/1702.01135)
 
-MILP:
+  (CAV 2017, arxiv:1702.01135)
+
+  Feb 2017
+
+  Guy Katz, Clark Barrett, David Dill, Kyle Julian, Mykel Kochenderfer
+
+- (Planet) [Formal Verification of Piece-Wise Linear Feed-Forward Neural Networks](https://arxiv.org/abs/1705.01320)
+
+  (ISATVA 2017, arxiv: 1705.01320)
+
+  May 2017
+
+  Ruediger Ehlers
+
+- (Survery paper) [Algorithms for Verifying Deep Neural Networks](https://arxiv.org/abs/1903.06758)
+
+  (arxiv: 1903.06758)
+
+  Mar 2019
+
+  Changliu Liu, Tomer Arnon, Christopher Lazarus, Clark Barrett, Mykel J. Kochenderfer
+
+**MILP** (Mixed Interger Programming)
 
 A fast exact verifier.
 
-- Evaluating Robustness of Neural Networks with mixed Integer Programming(ICLR 2019, arxiv:1711.07356)State-of-the-art of exact verifier
-- Training for Faster Adversarial Robustness Verification via Inducing ReLU Stability(ICLR 2019, arxiv: 1809.03008)On training side, regularization based. 19.32% on MNIST eps=0.3 l_infty ball.
+- [Evaluating Robustness of Neural Networks with mixed Integer Programming](https://arxiv.org/abs/1711.07356)
 
-Lipschitz-Based:
+  (ICLR 2019, arxiv:1711.07356)
 
-- (Heuristic, CLEVER) Evaluating the Robustness of Neural Networks: An Extreme Value Theory Approach(ICLR 2018, arxiv: 1801.10578)
-- On Extensions of CLEVER: A Neural Network Robustness Evaluation Algorithm(arxiv: 1810.08640)A short extension
-- (Fast-Lip in)Towards Fast Computation of Certified Robustness for ReLU Networks(ICML 2018, arxiv: 1804.09699)Relatively loose
-- RecurJac: An Efficient Recursive Algorithm for Bounding Jacobian Matrix of Neural Networks and Its Applications(AAAI 2019, arxiv: 1810.11783)
-- Lipschitz-Margin Training: Scalable Certification of Perturbation Invariance for Deep Neural Networks(NeurIPS 2018, arxiv: 1802.04034)
+  Nov 2017
 
-IBP:
+  Vincent Tjeng, Kai Xiao, Russ Tedrake
 
-- On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models(NeurIPS 2018 Workshop Best Paper, arxiv: 1810.12715)
-- Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models(arxiv: 1906.00628)
+- [Training for Faster Adversarial Robustness Verification via Inducing ReLU Stability](https://arxiv.org/abs/1809.03008)
 
-Linear Relaxations:
+  (ICLR 2019, arxiv: 1809.03008)
 
-- (Fast-Lin in)Towards Fast Computation of Certified Robustness for ReLU Networks(ICML 2018, arxiv: 1804.09699)By linear inequality propagation
-- CROWN: Efficient Neural Network Robustness Certification with General Activation Functions(NIPS 2018 - 7742)Generalize the linear inequality propagation
-- (Zonotope) Differentiable Abstract Interpretation for Provably Robust Neural Networks(ICML 2018)Substantially, zonotope is a compressed and efficient expression of fixed-formed linear equalities.
-- (Zonotope) Fast and Effective Robustness Certification(NIPS 2018)Shrink the zonotope region
-- (Zonotope) Boosting Robustness Certification of Neural Networks(ICLR 2019)Combine with MILP and LP to shrink interval bound on each neuron
-- (Zonotope) An Abstract Domain for Certifying Neural Networks(POPL 2019)Generalize to support rotations.
-- (Unification) A Convex Relaxation Barrier to Tight Robust Verification of Neural Networks(ArXiv: 1902.08722)A unification view of all LP and LP-Dual techniques.
+  Sept 2018
 
-Linear Dual Space Relaxations:
+  Kai Y. Xiao, Vincent Tjeng, Nur Muhammad Shafiullah, Aleksander Madry
 
-- Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope(ICML 2018, ArXiv: 1711.00851)First LP-Dual approach.
-- Scaling Provable Adversarial Defenses(NIPS 2018, ArXiv: 1805.12514)Scaling the previous approach by probabilistic training.
-- Efficient Neural Network Verification with Exactness Characterization(UAI 2018 Best Paper)Solve the optimal LP-bound. Be summarized in ArXiv: 1902.08722. But the concrete techniques to be read.
-- Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space(IJCAI 2019)LP-Dual training on the reference adversarial space.
+**Lipschitz-Based**
 
-SDP and SDP-Dual:
+- (Heuristic, CLEVER) [Evaluating the Robustness of Neural Networks: An Extreme Value Theory Approach](https://arxiv.org/abs/1801.10578)
 
-- Certified Defenses against Adversarial Examples(ICLR 2018)Strictly, it is not SDP. But it induces the following true SDP one and shares the same core idea.Only for two-layer networks.
-- Semidefinite relaxations for certifying robustness to adversarial examples(NIPS 2018, Arxiv: 1811.01057)SDP based on relax xx^T to an arbitrary symmetric matrix allowing full-rank.
-- Safety Verification and Robustness Analysis of Neural Networks via Quadratic Constraints and Semidefinite Programming(Arxiv: 1903.01287)An alternative way for SDP. Experiment results questionable.
-- Efficient and Accurate Estimation of Lipschitz Constants for Deep Neural Networks(Arxiv: 1906.04893)Only for Lipschitz, but in fact the same method as the previous one.
-- Efficient Neural Network Verification with Exactness Characterization(UAI 2019, paper 164)A SDP-dual approach which is accurate and fast.
+  (ICLR 2018, arxiv: 1801.10578)
 
-Hybrid:
+  Jan 2018
 
-- (Zonotope) AI2: Safety and Robustness Certification of Neural Networks with Abstract Interpretation(S&P 2018)
-- Formal security analysis of neural networks using symbolic intervals(USENIX security 2018)
+  *Tsui-Wei Weng, *Huan Zhang, Pin-Yu Chen, Jinfeng Yi, Dong Su, Yupeng Gao, Cho-Jui Hsieh, Luca Daniel
 
-Distributional and Probabilistic:
+- [Lipschitz-Margin Training: Scalable Certification of Perturbation Invariance for Deep Neural Networks](https://arxiv.org/abs/1802.04034)
 
-- Certifying some distributional robustness with principled adversarial training(ICLR 2018, ArXiv: 1710.10571)Another perspective and framework about certified robustness.
-- PROVEN: Certifying Robustness of Neural Networks with a Probabilistic Approach(ICML 2019, ArXiv: 1812.08329)Tight probabilistic bound for existing verification techniques.
+  (NeurIPS 2018, arxiv: 1802.04034)
 
-Differential Privacy and Randomized Smoothing:
+  Feb 2018
 
-- Certified Robustness to Adversarial Examples with Differential Privacy(S&P 2019, ArXiv: 1802.03471)Pioneering work, though beaten by Zico’s. Smoothing and provide bounds from differential privacy perspective.
-- Certified Adversarial Robustness via Randomized Smoothing(ICML 2019, ArXiv: 1902.02918)Initial work on randomized smoothing.
-- Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers(NeurIPS 2019, ArXiv: 1906.04584)Adversarial training of randomized smoothing. Also provide an alternate proof. State-of-the-art.
-- A Stratified Approach to Robustness for Randomly Smoothed Classifiers(ArXiv: 1906.04948)Extend to discrete case with l-0 norm
+  Yusuke Tsuzuku, Issei Sato, Masashi Sugiyama
 
-Theory and Analysis:
+- (Fast-Lip) [Towards Fast Computation of Certified Robustness for ReLU Networks](https://arxiv.org/abs/1804.09699)
 
--  (Lp Bound Unreliable) On the sensitivity of adversarial robustness to input data distributions(ICLR 2019, ArXiv: 1902.08336)
+  (ICML 2018, arxiv: 1804.09699)
 
-- Universal Approximation with Certified Networks(ICLR 2020 Submission, arXiv:1909.13846)
+  Apr 2018
 
-Applications:
+  *Tsui-Wei Weng, *Huan Zhang, Hongge Chen, Zhao Song, Cho-Jui Hsieh, Duane Boning, Inderjit S. Dhillon, Luca Daniel
 
-NLP:
+- [On Extensions of CLEVER: A Neural Network Robustness Evaluation Algorithm](https://arxiv.org/abs/1810.08640)
 
-- Certified Robustness to Adversarial Word Substitutions(EMNLP 2019, arxiv: 1909.00986)
+  (GlobalSIP 2018, arxiv: 1810.08640)
 
-- Achieving Verified Robustness to Symbol Substitutions via Interval Bound Propagation(ArXiv: 1909.01492)
+  Oct 2018
 
-Tree Model:
+  *Tsui-Wei Weng, *Huan Zhang, Pin-Yu Chen, Aurelie Lozano, Cho-Jui Hsieh, Luca Daniel
 
-- Robustness Verification of Tree-based Models		(NeurIPS 2019, ArXiv: 1906.03849)		Tight verification of tree-based models.
+- [RecurJac: An Efficient Recursive Algorithm for Bounding Jacobian Matrix of Neural Networks and Its Applications](https://arxiv.org/abs/1810.11783)
 
-CNN:
+  (AAAI 2019, arxiv: 1810.11783)
 
--  CNN-Cert: An Efficient Framework for Certifying Robustness of Convolutional Neural Networks(ArXiv: 1811.12395)		Verify of CNN.
+  Oct 2018
 
-CV:
+  Huan Zhang, Pengchuan Zhang, Cho-Jui Hsieh
 
-- (blackbox CV) Towards Practical Verification of Machine Learning: The Case of Computer Vision Systems(ArXiv: 1712.01785)
+**IBP** (Interval Bound Propagation)
 
-Reinforcement Learning:
+- (IBP + Dual) [Training Verified Learners with Learned Verifiers](https://arxiv.org/abs/1805.10265)
 
-- (Policy Verify) Verification of Neural Network Control Policy Under Persistent Adversarial Perturbation(arXiv:1908.06353)
+  (arxiv: 1805.10265)
 
-Probabilistic Models:
+  May 2018
 
-- Verification of Deep Probabilistic models(NeurIPS 2018 Workshop, arXiv: 1812.02795)
+  Krishnamurthy Dvijotham, Sven Gowal, Robert Stanforth, Relja Arandjelovic, Brendan O'Donoghue, Jonathan Uesato, Pushmeet Kohli
 
+- [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/abs/1810.12715)
 
+  (NeurIPS 2018 Workshop Best Paper, arxiv: 1810.12715)
 
-Specification beyond L-balls:
+  Oct 2018
 
-- (Zonotope) An Abstract Domain for Certifying Neural Networks (POPL 2019)
+  Sven Gowal, Krishnamurthy Dvijotham, Robert Stanforth, Rudy Bunel, Chongli Qin, Jonathan Uesato, Relja Arandjelovic, Timothy Mann, Pushmeet Kohli
 
-  Generalize to support rotations.
+- [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/abs/1906.00628)
 
-- (Non-linear Specs) Verification of Non-Linear Specifications for Neural Networks(ICLR 2019, ArXiv: 1902.09592)
+  (arxiv: 1906.00628)
 
-  A general approach to deal with non-linear specifications, including semantic distances.
+  Jun 2019
 
+  Paweł Morawiecki, Przemysław Spurek, Marek Śmieja, Jacek Tabor
 
+**Linear Relaxations**
 
-Other Approches:
+- (Fast-Lin) [Towards Fast Computation of Certified Robustness for ReLU Networks](https://arxiv.org/abs/1804.09699)
 
-- Provable Robustness of ReLU networks via Maximization of Linear Regions
+  (ICML 2018, arxiv: 1804.09699)
 
-  (AISTATS 2019, ArXiv: 1810.07481)
+  Apr 2018
 
-- Provable Certificates for Adversarial Examples: Fitting a Ball in the Union of Polytopes
+  *Tsui-Wei Weng, *Huan Zhang, Hongge Chen, Zhao Song, Cho-Jui Hsieh, Duane Boning, Inderjit S. Dhillon, Luca Daniel
+
+- (Zonotope) [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf)
+
+  (ICML 2018)
+
+  Jul 2018
+
+  Matthew Mirman, Timon Gehr, Martin Vechev
+
+- (Zonotope) [Boosting Robustness Certification of Neural Networks](https://openreview.net/forum?id=HJgeEh09KQ)
+
+  (ICLR 2019)
+
+  Sep 2018
+
+  Gagandeep Singh, Timon Gehr, Markus Püschel, Martin Vechev
+
+- (CROWN) [Efficient Neural Network Robustness Certification with General Activation Functions](https://arxiv.org/abs/1811.00866)
+
+  (NIPS 2018, arxiv: 1811.00866)
+
+  Nov 2018
+
+  *Huan Zhang, *Tsui-Wei Weng, Pin-Yu Chen, Cho-Jui Hsieh, Luca Daniel
+
+- (Zonotope) [Fast and Effective Robustness Certification](https://papers.nips.cc/paper/8278-fast-and-effective-robustness-certification)
+
+  (NIPS 2018)
+
+  Dec 2018
+
+  Gagandeep Singh, Timon Gehr, Matthew Mirman, Markus Püschel, Martin Vechev
+
+- (Zonotope) [An Abstract Domain for Certifying Neural Networks](https://dl.acm.org/citation.cfm?id=3290354)
+
+  (POPL 2019)
+
+  Jan 2019
+
+  Gagandeep Singh, Timon Gehr, Markus Püschel, Martin Vechev
+
+- (Unification) [A Convex Relaxation Barrier to Tight Robust Verification of Neural Networks](https://arxiv.org/abs/1902.08722)
+
+  (arxiv: 1902.08722)
+
+  Feb 2019
+
+  Hadi Salman, Greg Yang, Huan Zhang, Cho-Jui Hsieh, Pengchuan Zhang
+
+**Linear Dual Space Relaxations**
+
+- [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/abs/1711.00851)
+
+  (ICML 2018, arxiv: 1711.00851)
+
+  Nov 2017
+
+  Eric Wong, J. Zico Kolter
+
+- [A Dual Approach to Scalable Verification of Deep Networks](https://arxiv.org/abs/1803.06567)
+
+  (UAI 2018 Best Paper, arxiv: 1803.06567)
+
+  Mar 2018
+
+  Krishnamurthy (Dj)Dvijotham, Robert Stanforth, Sven Gowal, Timothy Mann, Pushmeet Kohli
+
+- [Scaling Provable Adversarial Defenses](https://arxiv.org/abs/1805.12514)
+
+  (NIPS 2018, arxiv: 1805.12514)
+
+  May 2018
+
+  Eric Wong, Frank R. Schmidt, Jan Hendrik Metzen, J. Zico Kolter
+
+- [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/654)
+
+  (IJCAI 2019)
+
+  *Linyi Li, *Zexuan Zhong, Bo Li, Tao Xie
+
+**SDP and SDP-Dual**
+
+- [Certified Defenses against Adversarial Examples](https://arxiv.org/abs/1801.09344)
+
+  (ICLR 2018, arxiv: 1801.09344)
+
+  Jan 2018
+
+  Aditi Raghunathan, Jacob Steinhardt, Percy Liang
+
+- [Semidefinite relaxations for certifying robustness to adversarial examples](https://arxiv.org/abs/1811.01057)
+
+  (NIPS 2018, arxiv: 1811.01057)
+
+  Nov 2018
+
+  Aditi Raghunathan, Jacob Steinhardt, Percy Liang
+
+- [Safety Verification and Robustness Analysis of Neural Networks via Quadratic Constraints and Semidefinite Programming](https://arxiv.org/abs/1903.01287)
+
+  (arxiv: 1903.01287)
+
+  Mar 2019
+
+  Mahyar Fazlyab, Manfred Morari, George J. Pappas
+
+- (SDP for Lipschitz) [Efficient and Accurate Estimation of Lipschitz Constants for Deep Neural Networks](https://arxiv.org/abs/1906.04893)
+
+  (NeurIPS 2019, arxiv: 1906.04893)
+
+  Jun 2019
+
+  Mahyar Fazlyab, Alexander Robey, Hamed Hassani, Manfred Morari, George J. Pappas
+
+- [Efficient Neural Network Verification with Exactness Characterization](http://auai.org/uai2019/proceedings/papers/164.pdf)
+
+  (UAI 2019, paper 164)
+
+  Jul 2019
+
+  Krishnamurthy (Dj) Dvijotham, Robert Stanforth, Sven Gowal, Chongli Qin, Soham De, Pushmeet Kohli
+
+**Differential Privacy and Randomized Smoothing**
+
+- [Certified Robustness to Adversarial Examples with Differential Privacy](https://arxiv.org/abs/1802.03471)
+
+  (S&P 2019, arxiv: 1802.03471)
+
+  Feb 2018
+
+  Mathias Lecuyer, Vaggelis Atlidakis, Roxana Geambasu, Daniel Hsu, Suman Jana
+
+- [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/abs/1902.02918)
+
+  (ICML 2019, arxiv: 1902.02918)
+
+  Feb 2019
+
+  Jeremy M Cohen, Elan Rosenfeld, J. Zico Kolter
+
+- [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/abs/1906.04584)
+
+  (NeurIPS 2019, arxiv: 1906.04584)
+
+  Jun 2019
+
+  Hadi Salman, Greg Yang, Jerry Li, Pengchuan Zhang, Huan Zhang, Ilya Razenshteyn, Sebastien Bubeck
+
+- [A Stratified Approach to Robustness for Randomly Smoothed Classifiers](https://arxiv.org/abs/1906.04948)
+
+  (arxiv: 1906.04948)
+
+  Jun 2019
+
+  Guang-He Lee, Yang Yuan, Shiyu Chang, Tommi S. Jaakkola
+
+**Hybrid**
+
+- (Reluval) [Formal security analysis of neural networks using symbolic intervals](https://arxiv.org/abs/1804.10829)
+
+  (USENIX security 2018, arxiv: 1804.10829)
+
+  Apr 2018
+
+  Shiqi Wang, Kexin Pei, Justin Whitehouse, Junfeng Yang, Suman Jana
+
+- (Zonotope) [AI2: Safety and Robustness Certification of Neural Networks with Abstract Interpretation](https://ieeexplore.ieee.org/document/8418593)
+
+  (S&P 2018)
+
+  May 2018
+
+  Timon Gehr, Matthew Mirman, Dana Drachsler-Cohen, Petar Tsankov, Swarat Chaudhuri, Martin Vechev
+
+- [Optimization + Abstraction: A Synergistic Approach for Analyzing Neural Network Robustness](https://arxiv.org/abs/1904.09959)
+
+  (PLDI 2019, arxiv: 1904.09959)
+
+  Apr 2019
+
+  Greg Anderson, Shankara Pailoor, Isil Dillig, Swarat Chaudhuri
+
+**Distributional and Probabilistic**
+
+- [Certifying some distributional robustness with principled adversarial training](https://arxiv.org/abs/1710.10571)
+
+  (ICLR 2018, arxiv: 1710.10571)
+
+  Oct 2017
+
+  Aman Sinha, Hongseok Namkoong, John Duchi
+
+- [PROVEN: Certifying Robustness of Neural Networks with a Probabilistic Approach](https://arxiv.org/abs/1812.08329)
+
+  (ICML 2019, arxiv: 1812.08329)
+
+  Dec 2018
+
+  Tsui-Wei Weng, Pin-Yu Chen, Lam M. Nguyen, Mark S. Squillante, Ivan Oseledets, Luca Daniel
+
+**Theory and Analysis**
+
+- (Lp Bound Unreliable) [On the sensitivity of adversarial robustness to input data distributions](https://arxiv.org/abs/1902.08336)
+
+  (ICLR 2019, arxiv: 1902.08336)
+
+  Feb 2019
+
+  Gavin Weiguang Ding, Kry Yik Chau Lui, Xiaomeng Jin, Luyu Wang, Ruitong Huang
+
+- [Universal Approximation with Certified Networks](https://arxiv.org/abs/1909.13846)
+
+  (ICLR 2020 Submission, arxiv:1909.13846)
+
+  Sep 2019
+
+  Maximilian Baader, Matthew Mirman, Martin Vechev
+
+**Other Approches**
+
+- [Provable Robustness of ReLU networks via Maximization of Linear Regions](https://arxiv.org/abs/1810.07481)
+
+  (AISTATS 2019, arxiv: 1810.07481)
+
+  Oct 2018
+
+  Francesco Croce, Maksym Andriushchenko, Matthias Hein
+
+- [Provable Certificates for Adversarial Examples: Fitting a Ball in the Union of Polytopes](https://arxiv.org/abs/1903.08778)
 
   (ICML 2019 SPML Workshop, ArXiv: 1903.08778)
 
+  Mar 2019
 
+  Matt Jordan, Justin Lewis, Alexandros G. Dimakis
+
+**Dealing with General Settings**
+
+Note that many papers above can be generalized to activation functions beyond ReLU. Here we only list those which deem their main contribution as dealing with general settings.
+
+- (Zonotope) [An Abstract Domain for Certifying Neural Networks](https://dl.acm.org/citation.cfm?id=3290354)
+
+  (POPL 2019)
+
+  Jan 2019
+
+  Gagandeep Singh, Timon Gehr, Markus Püschel, Martin Vechev
+
+- (Non-linear Specs) [Verification of Non-Linear Specifications for Neural Networks](https://arxiv.org/abs/1902.09592)
+
+  (ICLR 2019, arxiv: 1902.09592)
+
+  Feb 2019
+
+  Chongli Qin, Krishnamurthy (Dj)Dvijotham, Brendan O'Donoghue, Rudy Bunel, Robert Stanforth, Sven Gowal, Jonathan Uesato, Grzegorz Swirszcz, Pushmeet Kohli
+
+---
+
+### Applications
+
+The following papers either apply the above approaches to specific domains, or deal with different but closely related problems.
+
+**NLP**
+
+- [Certified Robustness to Adversarial Word Substitutions](https://arxiv.org/abs/1909.00986)
+
+  (EMNLP 2019, arxiv: 1909.00986)
+
+  Sep 2019
+
+  Robin Jia, Aditi Raghunathan, Kerem Göksel, Percy Liang
+
+- [Achieving Verified Robustness to Symbol Substitutions via Interval Bound Propagation](https://arxiv.org/abs/1909.01492)
+
+  (arxiv: 1909.01492)
+
+  Sep 2019
+
+  Po-Sen Huang, Robert Stanforth, Johannes Welbl, Chris Dyer, Dani Yogatama, Sven Gowal, Krishnamurthy Dvijotham, Pushmeet Kohli
+
+**Tree Model**
+
+- [Robustness Verification of Tree-based Models](https://arxiv.org/abs/1906.03849)
+
+  (NeurIPS 2019, arxiv: 1906.03849)
+
+  Jun 2019
+
+  Hongge Chen, Huan Zhang, Si Si, Yang Li, Duane Boning, Cho-Jui Hsieh
+
+**CNN**
+
+- [CNN-Cert: An Efficient Framework for Certifying Robustness of Convolutional Neural Networks](https://arxiv.org/abs/1811.12395)
+
+  (arxiv: 1811.12395)
+
+  Nov 2018
+
+  Akhilan Boopathy, Tsui-Wei Weng, Pin-Yu Chen, Sijia Liu, Luca Daniel
+
+**CV**
+
+- (blackbox CV) [Towards Practical Verification of Machine Learning: The Case of Computer Vision Systems](https://arxiv.org/abs/1712.01785)
+
+  (arxiv: 1712.01785)
+
+  Dec 2017
+
+  Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana
+
+**Reinforcement Learning**
+
+- (Policy Verify) [Verification of Neural Network Control Policy Under Persistent Adversarial Perturbation](https://arxiv.org/abs/1908.06353)
+
+  (arxiv:1908.06353)
+
+  Aug 2019
+
+  Yuh-Shyang Wang, Tsui-Wei Weng, Luca Daniel
+
+**Probabilistic Models**
+
+- [Verification of Deep Probabilistic models](https://arxiv.org/abs/1812.02795)
+
+  (NIPS 2018 Workshop, arxiv: 1812.02795)
+
+  Dec 2018
+
+  Krishnamurthy Dvijotham, Marta Garnelo, Alhussein Fawzi, Pushmeet Kohli
+
+---
 
 Maintained by Linyi.
 
