@@ -172,8 +172,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 | [MixTrain: Scalable Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1811.02625.pdf) | Wang et al      | Resnet          | 50.4%       |                                                              |
 | (Verification)[Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/pdf/1711.07356.pdf) | Tjeng et al     | CNN             | 50.20%      | MILP verification on Wong et al. model                       |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al     | CNN             | 50.02%      |                                                              |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 47.54%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 47.54%   | pick the best number |
 | [Training for Faster Adversarial Robustness Verification via Inducing ReLU Stability](https://arxiv.org/pdf/1809.03008.pdf) | Xiao et al      | CNN             | 45.93%      |                                                              |
 | (Verification) [An Abstract Domain for Certifying Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) | Singh et al     | CNN             | 40%         | ~2.04/255, only evaluated from 100 samples among all 10,000  |
 | (Verification)[A Dual Approach to Scalable Verification of Deep Networks](http://auai.org/uai2018/proceedings/papers/204.pdf) | Dvijotham et al | CNN             | 20%         | LP-Dual verification on Uesato et al. model; interpolated from Fig. 2(a) |
@@ -187,8 +186,7 @@ Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small C
 | [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | Small CNN          | 39.88%   |                                                              |
 | [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf) | Mirman et al     | Small CNN          | 37.4%    | ~7.65/255, only evaluated from 500 samples among all 10,000  |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN                | 32.04%   |  Practically reproducible verified error is about 28% - 29% according to Zhang et al |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 29.21%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 29.21%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al  | Predictor-Verifier | 26.67%   |                                                              |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/654) | Li et al         | CNN                | 25.13%   |                                                              |
 | [A Provable Defense for Deep Residual Networks](https://arxiv.org/pdf/1903.12519.pdf) | Mirman et al     | ResNet-Tiny        | 23.2%    |                                                              |
@@ -229,8 +227,7 @@ eps=1.58 is transformed from L-infty eps=0.1.
 | (Verification) [Boosting Robustness Certification of Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf) | Singh et al       | ConvSuper          | 97%      | Only evaluated from 100 samples among all 10,000 |
 | [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf) | Mirman et al      | big CNN            | 96.6%    | Only evaluated from 500 samples among all 10,000 |
 | [Scaling Provable Adversarial Defenses](https://arxiv.org/pdf/1805.12514.pdf) | Wong et al        | large CNN          | 96.33%   |                                                  |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 95.79%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 95.79%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al   | Predictor-Verifier | 95.56%   |                                                  |
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al        | CNN                | 94.18%   |                                                  |
 | (Verification) [Efficient Neural Network Verification with Exactness Characterization](http://auai.org/uai2019/proceedings/papers/164.pdf) | Dvijotham et al   | Grad-NN            | 83.68%   |                                                  |
@@ -244,8 +241,7 @@ Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small C
 
 | Defense/Verification                                         | Author       | Model Structure | Accuracy |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 92.54%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 92.54%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al  | CNN             | 91.95%   |      |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/0654.pdf) | Li et al     | small CNN       | 83.09%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al  | large CNN       | 75.81%   |      |
@@ -259,8 +255,7 @@ Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large C
 
 | Defense/Verification                                         | Author           | Model Structure | Accuracy |      |
 | ------------------------------------------------------------ | ---------------- | --------------- | -------- | ---- |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 87.04%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 87.04%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN             | 85.12%   |      |
 | [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | large CNN       | 84.42%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al      | small CNN       | 51.02%   |      |
@@ -325,8 +320,7 @@ This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0
 
 | Defense/Verification                                         | Author     | Model Structure | Accuracy |      |
 | ------------------------------------------------------------ | ---------- | --------------- | -------- | ---- |
-| [Towards Stable and Efficient Training of Verifiably Robust
-Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 78.73%   | pick the best number |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 78.73%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | large CNN             | 77.63%   | pick the best number, reported by Zhang et al |
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al | CNN             | 65.47%   |      |
 
