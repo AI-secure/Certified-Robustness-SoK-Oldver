@@ -1,5 +1,5 @@
-# Awesome Provable Robust Neural Networks
-Recently, provable adversarial robustness and robustness verfication becomes a hot research topic.
+# Provable Training and Verification Approaches Towards Robust Neural Networks
+Recently, provable (i.e. certified) adversarial robustness and robustness verfication becomes a hot research topic.
 
 In constrast to empirical robustness and empirical adversarial attacks, (common) provable robustness neural networks give a rigorous guarantee about the successful rate bound, that **no** existing or future attacks will break. Robustness verification approaches stongly connect with provable robustness, which verifies such successful rate bound given a neural network model.
 
@@ -15,7 +15,7 @@ Mainly perturbation norm are L-2 balls and l-infty balls.
 
 This repo mainly records recent progress of above settings, while advances in other settings are recorded in the attached paperlist.
 
-We only consider single model robustness.
+We only consider **single model** robustness.
 
 #### Contact & Updates
 
@@ -715,6 +715,25 @@ A fast exact verifier.
   Apr 2019
 
   Greg Anderson, Shankara Pailoor, Isil Dillig, Swarat Chaudhuri
+
+**Ensemble**
+
+
+- (Cascade)[Scaling Provable Adversarial Defenses](https://arxiv.org/abs/1805.12514)
+
+  (NIPS 2018, arxiv: 1805.12514)
+
+  May 2018
+
+  Eric Wong, Frank R. Schmidt, Jan Hendrik Metzen, J. Zico Kolter
+
+- (Cascade)[Enhancing Certifiable Robustness via a Deep Model Ensemble](https://arxiv.org/abs/1910.14655)
+
+  (ICLR 2019 Workshop, arxiv: 1910.14655)
+
+  Oct 2019
+
+  Huan Zhang, Minhao Cheng, Cho-Jui Hsieh
 
 **Distributional and Probabilistic**
 
