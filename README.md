@@ -1,7 +1,7 @@
 # Provable Training and Verification Approaches Towards Robust Neural Networks
-Recently, provable (i.e. certified) adversarial robustness and robustness verfication becomes a hot research topic.
+Recently, provable (i.e. certified) adversarial robustness and robustness verification becomes a hot research topic.
 
-In constrast to empirical robustness and empirical adversarial attacks, (common) provable robustness neural networks give a rigorous guarantee about the successful rate bound, that **no** existing or future attacks will break. Robustness verification approaches stongly connect with provable robustness, which verifies such successful rate bound given a neural network model.
+In contrast to empirical robustness and empirical adversarial attacks, (common) provable robustness neural networks give a rigorous guarantee about the successful rate bound, that **no** existing or future attacks will break. Robustness verification approaches strongly connect with provable robustness, which verifies such successful rate bound given a neural network model.
 
 Trained on training set, the provable robustness is often measure by **robust accuracy** or **error rate** on the test set. One sample is considered accurate if and only if we can prove that there is no adversararial samples exist in the neighborhood, i.e., the model always outputs the current prediction label in the neighborhood. The neighborhood is usually defined by L-norm balls. For example, L-infty balls are $\{x + \delta: \lVert \delta \rVert_\infty \le \epsilon\}$ , L-2 balls are $\{x + \delta: \lVert \delta \rVert_2 \le \epsilon\}$. The size of the ball is controlled by eps ($\epsilon$).
 
