@@ -21,7 +21,7 @@ We only consider **single model** robustness.
 
 We are trying to keep track of all important advances in provable robustness, but may still miss some works.
 
-Please feel free to contact us (Linyi(linyi2@illinois.edu) @ [UIUC Secure Learning Lab](https://aisecure.github.io/)) or commit your updates :)
+Please feel free to contact us (Linyi(linyi2@illinois.edu) @ [UIUC Secure Learning Lab](https://aisecure.github.io/) & [Illinois ASE Group](http://asenews.blogspot.com/)) or commit your updates :)
 
 ## Main Leaderboard
 
