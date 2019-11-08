@@ -1,39 +1,39 @@
-# Awesome Provable Robust Neural Networks
-Recently, provable adversarial robustness and robustness verfication becomes a hot research topic.
+# Provable Training and Verification Approaches Towards Robust Neural Networks
+Recently, provable (i.e. certified) adversarial robustness training and verification methods have demonstrated their effectiveness against adversarial attacks. In contrast to empirical robustness and empirical adversarial attacks, the provable robustness verification provides rigorous lower bound of robustness for a given neural network, such that **no** existing or future attacks will attack further. 
 
-In constrast to empirical robustness and empirical adversarial attacks, (common) provable robustness neural networks give a rigorous guarantee about the successful rate bound, that **no** existing or future attacks will break. Robustness verification approaches stongly connect with provable robustness, which verifies such successful rate bound given a neural network model.
+Note that the training methods towards robust networks are usually connected with the corresponding verification approach. For instance, after training, the robustness bound is often measure on the test set in terms of "robust accuracy"(RACC). One data sample is considered to be provable robust if and only if we can prove that there is no adversarial samples exist in the neighborhood, i.e., the model always outputs the current prediction label in the neighborhood. The neighborhood is usually defined by L-norm distance. 
 
-Trained on training set, the provable robustness is often measure by **robust accuracy** or **error rate** on the test set. One sample is considered accurate if and only if we can prove that there is no adversararial samples exist in the neighborhood, i.e., the model always outputs the current prediction label in the neighborhood. The neighborhood is usually defined by L-norm balls. For example, L-infty balls are $\{x + \delta: \lVert \delta \rVert_\infty \le \epsilon\}$ , L-2 balls are $\{x + \delta: \lVert \delta \rVert_2 \le \epsilon\}$. The size of the ball is controlled by eps ($\epsilon$).
+Tighter provable robustness bound can be achieved by better robust training approaches, and tighter robustness verification approaches, or jointly.
 
-Better provable robustness can be achieved by better provable robust training approaches which yield more robust models, tighter robustness verification approaches which yield tighter guarantees, or jointly.
 
-#### Scoop of the Repo
 
-Currently, works in literature mainly focuses on image classification tasks with datasets MNIST, CIFAR10, ImageNet, FashionMNIST, and SVHN.
+#### Scope of the Repo
 
-Mainly perturbation norm are L-2 balls and l-infty balls.
+Current works mainly focus on image classification tasks with datasets MNIST, CIFAR10, ImageNet, FashionMNIST, and SVHN.
+
+We focus on perturbation measured by L-2 and L-infty norms.
 
 This repo mainly records recent progress of above settings, while advances in other settings are recorded in the attached paperlist.
 
-We only consider single model robustness.
+We only consider **single model** robustness.
 
 #### Contact & Updates
 
-We are trying to keep track of all important advances in provable robustness, but may still miss some works.
+We are trying to keep track of all important advances of provable robustness approaches, but may still miss some.
 
-Please feel free to contact us (Linyi(linyi2@illinois.edu) @ [UIUC Secure Learning Lab](https://aisecure.github.io/)) or commit your updates :)
+Please feel free to contact us (Linyi(linyi2@illinois.edu) @ [UIUC Secure Learning Lab](https://aisecure.github.io/) & [Illinois ASE Group](http://asenews.blogspot.com/)) or commit your updates :)
 
 ## Main Leaderboard
 
 ### ImageNet
 
-All input images have three channels; each pixel is in range [0, 255].
+All input images contain three channels; each pixel is in range [0, 255].
 
 #### L2
 
 ##### eps = 0.2
 
-| Defense                                                      | Author        | Model Structure | Accuracy |      |
+| Defense                                                      | Author        | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------- | --------------- | -------- | ---- |
 | [Certified Robustness to Adversarial Examples with Differential Privacy](https://arxiv.org/pdf/1802.03471.pdf) | Lecuyer et al | Inception V3    | 40%      |      |
 
@@ -41,7 +41,7 @@ All input images have three channels; each pixel is in range [0, 255].
 
 ##### eps = 0.5
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salman et al | ResNet-50       | 56%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-50       | 49%      |      |
@@ -52,7 +52,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps = 1.0
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salman et al | ResNet-50       | 43%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-50       | 37%      |      |
@@ -63,7 +63,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps = 2.0
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salman et al | ResNet-50       | 27%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-50       | 19%      |      |
@@ -74,7 +74,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps = 3.0
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salman et al | ResNet-50       | 20%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-50       | 12%      |      |
@@ -85,7 +85,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=1/255
 
-| Defense                                                      | Author       | Model Structure  | Accuracy |                                                              |
+| Defense                                                      | Author       | Model Structure  | RACC     |                                                              |
 | ------------------------------------------------------------ | ------------ | ---------------- | -------- | ------------------------------------------------------------ |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salman et al | ResNet-50        | 36.8%    | transformed from L-2 robustness; wrong prob. 0.001           |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-50        | 28.6%    | transformed from L-2 robustness by Salman et al; wrong prob. 0.001 |
@@ -95,7 +95,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=1.785/255
 
-| Defense                                                      | Author     | Model Structure | Accuracy |                                |
+| Defense                                                      | Author     | Model Structure | RACC     |                                |
 | ------------------------------------------------------------ | ---------- | --------------- | -------- | ------------------------------ |
 | [MixTrain: Scalable Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1811.02625.pdf) | Wang et al | ResNet          | 19.4%    |                                |
 | [Scaling provable adversarial defenses](https://arxiv.org/pdf/1805.12514.pdf) | Wong et al | ResNet          | 5.1%     | Run and reported by Wang et al |
@@ -110,7 +110,7 @@ All input images have three channels; 32 x 32 x 3 size; each pixel is in range [
 
 ##### eps=0.14
 
-| Defense                                                      | Author        | Model Structure | Accuracy |                                        |
+| Defense                                                      | Author        | Model Structure | RACC     |                                        |
 | ------------------------------------------------------------ | ------------- | --------------- | -------- | -------------------------------------- |
 | [Scaling provable adversarial defenses](https://arxiv.org/pdf/1805.12514.pdf) | Wong et al    | Resnet          | 51.96%   | 36/255; transformed from L-infty 2/255 |
 | [Certified Robustness to Adversarial Examples with Differential Privacy](https://arxiv.org/pdf/1802.03471.pdf) | Lecuyer et al | Resnet          | 40%      |                                        |
@@ -120,7 +120,7 @@ All input images have three channels; 32 x 32 x 3 size; each pixel is in range [
 
 ##### eps=0.25
 
-| Defense                                                      | Author       | Model Structure | Accuracy |                          |
+| Defense                                                      | Author       | Model Structure | RACC     |                          |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ------------------------ |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salmon et al | ResNet-110      | 82%      |                          |
 | [Unlabeled Data Improves Adversarial Robustness](https://arxiv.org/pdf/1905.13736.pdf) | Carmon et al | ResNet 28-10    | 72%      | interpolated from Fig. 1 |
@@ -131,7 +131,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=0.5
 
-| Defense                                                      | Author       | Model Structure | Accuracy |                          |
+| Defense                                                      | Author       | Model Structure | RACC     |                          |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ------------------------ |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salmon et al | ResNet-110      | 65%      |                          |
 | [Unlabeled Data Improves Adversarial Robustness](https://arxiv.org/pdf/1905.13736.pdf) | Carmon et al | ResNet 28-10    | 61%      | interpolated from Fig. 1 |
@@ -141,7 +141,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=1.0
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salmon et al | ResNet-110      | 39%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-110      | 22%      |      |
@@ -150,7 +150,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=1.5
 
-| Defense                                                      | Author       | Model Structure | Accuracy |      |
+| Defense                                                      | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salmon et al | ResNet-110      | 32%      |      |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al  | ResNet-110      | 14%      |      |
@@ -161,7 +161,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 ##### eps=2/255
 
-| Defense/Verification                                         | Author          | Model Structure | Accuracy    |                                                              |
+| Defense/Verification                                         | Author          | Model Structure | RACC        |                                                              |
 | ------------------------------------------------------------ | --------------- | --------------- | ----------- | ------------------------------------------------------------ |
 | [Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers](https://arxiv.org/pdf/1906.04584.pdf) | Salmon et al    | ResNet-110      | 68.2%       | transformed from L-2 robustness; wrong prob. 0.1%            |
 | (Verification) [Efficient Neural Network Verification with Exactness Characterization](http://auai.org/uai2019/proceedings/papers/164.pdf) | Dvijotham et al | Small CNN       | 65.4%       |                                                              |
@@ -172,19 +172,21 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 | [MixTrain: Scalable Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1811.02625.pdf) | Wang et al      | Resnet          | 50.4%       |                                                              |
 | (Verification)[Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/pdf/1711.07356.pdf) | Tjeng et al     | CNN             | 50.20%      | MILP verification on Wong et al. model                       |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al     | CNN             | 50.02%      |                                                              |
-| (Verification) [An Abstract Domain for Certifying Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) | Singh et al     | CNN             | 40%         | ~2.04/255, only evaluated from 100 samples among all 10,000  |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 47.54%   | pick the best number |
 | [Training for Faster Adversarial Robustness Verification via Inducing ReLU Stability](https://arxiv.org/pdf/1809.03008.pdf) | Xiao et al      | CNN             | 45.93%      |                                                              |
+| (Verification) [An Abstract Domain for Certifying Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) | Singh et al     | CNN             | 40%         | ~2.04/255, only evaluated from 100 samples among all 10,000  |
 | (Verification)[A Dual Approach to Scalable Verification of Deep Networks](http://auai.org/uai2018/proceedings/papers/204.pdf) | Dvijotham et al | CNN             | 20%         | LP-Dual verification on Uesato et al. model; interpolated from Fig. 2(a) |
 
 
 
 ##### eps=8/255
 
-| Defense/Verification                                         | Author           | Model Structure    | Accuracy |                                                              |
+| Defense/Verification                                         | Author           | Model Structure    | RACC     |                                                              |
 | ------------------------------------------------------------ | ---------------- | ------------------ | -------- | ------------------------------------------------------------ |
 | [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | Small CNN          | 39.88%   |                                                              |
 | [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf) | Mirman et al     | Small CNN          | 37.4%    | ~7.65/255, only evaluated from 500 samples among all 10,000  |
-| [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN                | 32.04%   |                                                              |
+| [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN                | 32.04%   |  Practically reproducible verified error is about 28% - 29% according to Zhang et al |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 29.21%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al  | Predictor-Verifier | 26.67%   |                                                              |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/654) | Li et al         | CNN                | 25.13%   |                                                              |
 | [A Provable Defense for Deep Residual Networks](https://arxiv.org/pdf/1903.12519.pdf) | Mirman et al     | ResNet-Tiny        | 23.2%    |                                                              |
@@ -206,7 +208,7 @@ All input images are grayscale; 28 x 28 size; each pixel is in range [0, 1].
 
 eps=1.58 is transformed from L-infty eps=0.1.
 
-| Defense/Verification                                         | Author     | Model Structure | Accuracy |      |
+| Defense/Verification                                         | Author     | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ---------- | --------------- | -------- | ---- |
 | [Scaling provable adversarial defenses](https://arxiv.org/pdf/1902.02918.pdf) | Wong et al | Small CNN       | 88.14%   |      |
 
@@ -216,7 +218,7 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 ##### eps=0.1
 
-| Defense/Verification                                         | Author            | Model Structure    | Accuracy |                                                  |
+| Defense/Verification                                         | Author            | Model Structure    | RACC     |                                                  |
 | ------------------------------------------------------------ | ----------------- | ------------------ | -------- | ------------------------------------------------ |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/0654.pdf) | Li et al          | large CNN          | 97.91%   |                                                  |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al       | CNN                | 97.77%   |                                                  |
@@ -225,6 +227,7 @@ eps=1.58 is transformed from L-infty eps=0.1.
 | (Verification) [Boosting Robustness Certification of Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf) | Singh et al       | ConvSuper          | 97%      | Only evaluated from 100 samples among all 10,000 |
 | [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf) | Mirman et al      | big CNN            | 96.6%    | Only evaluated from 500 samples among all 10,000 |
 | [Scaling Provable Adversarial Defenses](https://arxiv.org/pdf/1805.12514.pdf) | Wong et al        | large CNN          | 96.33%   |                                                  |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 95.79%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al   | Predictor-Verifier | 95.56%   |                                                  |
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al        | CNN                | 94.18%   |                                                  |
 | (Verification) [Efficient Neural Network Verification with Exactness Characterization](http://auai.org/uai2019/proceedings/papers/164.pdf) | Dvijotham et al   | Grad-NN            | 83.68%   |                                                  |
@@ -236,8 +239,9 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 ##### eps=0.3
 
-| Defense/Verification                                         | Author       | Model Structure | Accuracy |      |
+| Defense/Verification                                         | Author       | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 92.54%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al  | CNN             | 91.95%   |      |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/0654.pdf) | Li et al     | small CNN       | 83.09%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al  | large CNN       | 75.81%   |      |
@@ -249,8 +253,9 @@ eps=1.58 is transformed from L-infty eps=0.1.
 
 ##### eps=0.4
 
-| Defense/Verification                                         | Author           | Model Structure | Accuracy |      |
+| Defense/Verification                                         | Author           | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ---------------- | --------------- | -------- | ---- |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 87.04%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN             | 85.12%   |      |
 | [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | large CNN       | 84.42%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al      | small CNN       | 51.02%   |      |
@@ -267,7 +272,7 @@ The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. Wh
 
 ##### eps=0.1
 
-| Defense/Verification                                         | Author        | Model Structure | Accuracy |                              |
+| Defense/Verification                                         | Author        | Model Structure | RACC     |                              |
 | ------------------------------------------------------------ | ------------- | --------------- | -------- | ---------------------------- |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al   | Resnet-20       | ~95%     | Interpolate from Cohen et al |
 | [Lipschitz-Margin Training: Scalable Certification of Perturbation Invariance for Deep Neural Networks](https://arxiv.org/pdf/1802.04034.pdf) | Tsuzuku et al | Resnet-20       | 0%       | Interpolate from Cohen et al |
@@ -276,7 +281,7 @@ The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. Wh
 
 ##### eps=0.2
 
-| Defense/Verification                                         | Author        | Model Structure | Accuracy |                              |
+| Defense/Verification                                         | Author        | Model Structure | RACC     |                              |
 | ------------------------------------------------------------ | ------------- | --------------- | -------- | ---------------------------- |
 | [Certified Adversarial Robustness via Randomized Smoothing](https://arxiv.org/pdf/1902.02918.pdf) | Cohen et al   | Resnet-20       | ~88%     | Interpolate from Cohen et al |
 | [Lipschitz-Margin Training: Scalable Certification of Perturbation Invariance for Deep Neural Networks](https://arxiv.org/pdf/1802.04034.pdf) | Tsuzuku et al | Resnet-20       | 0%       | Interpolate from Cohen et al |
@@ -287,7 +292,7 @@ The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. Wh
 
 ##### eps=0.01
 
-| Defense/Verification                                         | Author          | Model Structure    | Accuracy |      |
+| Defense/Verification                                         | Author          | Model Structure    | RACC     |      |
 | ------------------------------------------------------------ | --------------- | ------------------ | -------- | ---- |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al | Predictor-Verifier | 62.44%   |      |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al     | CNN                | 62.40%   |      |
@@ -298,7 +303,7 @@ The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. Wh
 
 ##### eps=8/255
 
-| Defense/Verification                                         | Author           | Model Structure | Accuracy |                            |
+| Defense/Verification                                         | Author           | Model Structure | RACC     |                            |
 | ------------------------------------------------------------ | ---------------- | --------------- | -------- | -------------------------- |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | large CNN       | 47.63%   | Report by Morawiecki et al |
 | [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | small CNN       | 46.03%   |                            |
@@ -313,8 +318,10 @@ This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0
 
 ##### eps=0.1
 
-| Defense/Verification                                         | Author     | Model Structure | Accuracy |      |
+| Defense/Verification                                         | Author     | Model Structure | RACC     |      |
 | ------------------------------------------------------------ | ---------- | --------------- | -------- | ---- |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 78.73%   | pick the best number |
+| [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | large CNN             | 77.63%   | pick the best number, reported by Zhang et al |
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al | CNN             | 65.47%   |      |
 
 
@@ -323,15 +330,13 @@ This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0
 
 **Notes**:
 
-1. Some papers use rarely-used epsilon to report their results, which increases comparison difficulty. Some papers use epsilon after regularization instead of raw one, which induces confusion.
+1. Some papers use rarely-used epsilon to report their results, which may increase comparison difficulty. Some papers use epsilon after regularization instead of raw one, which may also induce confusion.
 
-   We think it is better to adapt common evaluation epsilons and routines.
+   We would suggest to adapt common evaluation epsilon values and settings.
 
-2. Instead of evaluating on above benchmarks and reporting the robust accuracy, some papers tend to report average robust radius. When such papers become abundant, we will add comparison table for that metric.
+2. Instead of evaluating on above benchmarks and reporting the robust accuracy, some papers tend to report average robust radius. We will add comparison table for such metric later.
 
-3. Some verification works tend to use small toy models or random models for evaluation. The model it used limits the verified robustness it can achieve, no matter how tight it is. We suggest using trained robust models for evaluation.
-
-4. Besides the on-the-board results, all these papers have their own unique takeaways. For interested reader and stackholders, we recommend not to only value the approach with highest number.
+4. Besides the on-the-board results, all these papers have their own unique takeaways. For interested reader and stackholders, we recommend to not only value the approach with higher numbers, but also dig into their technical meat.
 
 ## Reference: Empirical Robustness
 
@@ -499,6 +504,15 @@ A fast exact verifier.
   Jun 2019
 
   Paweł Morawiecki, Przemysław Spurek, Marek Śmieja, Jacek Tabor
+  
+- [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/abs/1906.06316)
+
+  (arxiv: 1906.06316)
+
+  Jun 2019
+
+  Huan Zhang, Hongge Chen, Chaowei Xiao, Bo Li, Duane Boning, Cho-Jui Hsieh
+  
 
 **Linear Relaxations**
 
@@ -552,11 +566,19 @@ A fast exact verifier.
 
 - (Unification) [A Convex Relaxation Barrier to Tight Robust Verification of Neural Networks](https://arxiv.org/abs/1902.08722)
 
-  (arxiv: 1902.08722)
+  (NeurIPS 2019, arxiv: 1902.08722)
 
   Feb 2019
 
   Hadi Salman, Greg Yang, Huan Zhang, Cho-Jui Hsieh, Pengchuan Zhang
+
+- [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/abs/1906.06316)
+
+  (arxiv: 1906.06316)
+
+  Jun 2019
+
+  Huan Zhang, Hongge Chen, Chaowei Xiao, Bo Li, Duane Boning, Cho-Jui Hsieh
 
 **Linear Dual Space Relaxations**
 
@@ -691,6 +713,25 @@ A fast exact verifier.
   Apr 2019
 
   Greg Anderson, Shankara Pailoor, Isil Dillig, Swarat Chaudhuri
+
+**Ensemble**
+
+
+- (Cascade)[Scaling Provable Adversarial Defenses](https://arxiv.org/abs/1805.12514)
+
+  (NIPS 2018, arxiv: 1805.12514)
+
+  May 2018
+
+  Eric Wong, Frank R. Schmidt, Jan Hendrik Metzen, J. Zico Kolter
+
+- (Cascade)[Enhancing Certifiable Robustness via a Deep Model Ensemble](https://arxiv.org/abs/1910.14655)
+
+  (ICLR 2019 Workshop, arxiv: 1910.14655)
+
+  Oct 2019
+
+  Huan Zhang, Minhao Cheng, Cho-Jui Hsieh
 
 **Distributional and Probabilistic**
 
