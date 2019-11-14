@@ -174,6 +174,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al     | CNN             | 50.02%      |                                                              |
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | small CNN | 47.54%   | pick the best number |
 | [Training for Faster Adversarial Robustness Verification via Inducing ReLU Stability](https://arxiv.org/pdf/1809.03008.pdf) | Xiao et al      | CNN             | 45.93%      |                                                              |
+| (Verification) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu) | Singh et al | ConvBig | 45.9% | evaluated on first 1,000 images |
 | (Verification) [An Abstract Domain for Certifying Neural Networks](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) | Singh et al     | CNN             | 40%         | ~2.04/255, only evaluated from 100 samples among all 10,000  |
 | (Verification)[A Dual Approach to Scalable Verification of Deep Networks](http://auai.org/uai2018/proceedings/papers/204.pdf) | Dvijotham et al | CNN             | 20%         | LP-Dual verification on Uesato et al. model; interpolated from Fig. 2(a) |
 
@@ -189,6 +190,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 29.21%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al  | Predictor-Verifier | 26.67%   |                                                              |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/654) | Li et al         | CNN                | 25.13%   |                                                              |
+| (Verification) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu) | Singh et al | ResNet | 24.5% | Evaluated on first 1,000 images |
 | [A Provable Defense for Deep Residual Networks](https://arxiv.org/pdf/1903.12519.pdf) | Mirman et al     | ResNet-Tiny        | 23.2%    |                                                              |
 | [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/pdf/1711.07356.pdf) | Tjeng et al      | CNN                | 22.40%   |                                                              |
 | [Scaling provable adversarial defenses](https://arxiv.org/pdf/1902.02918.pdf) | Wong et al       | Resnet             | 21.78%   |                                                              |
@@ -245,6 +247,7 @@ eps=1.58 is transformed from L-infty eps=0.1.
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al  | CNN             | 91.95%   |      |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/0654.pdf) | Li et al     | small CNN       | 83.09%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al  | large CNN       | 75.81%   |      |
+| (Verification) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu) | Singh et al | ConvBig | 73.6% | evaluated on first 1,000 images |
 | [MixTrain: Scalable Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1811.02625.pdf) | Wang et al   | small CNN       | 60.1%    |      |
 | [Scaling Provable Adversarial Defenses](https://arxiv.org/pdf/1805.12514.pdf) | Wong et al   | small CNN       | 56.90%   |      |
 | (Verification) [A Convex Relaxation Barrier to Tight Robustness Verification of Neural Networks](https://arxiv.org/pdf/1902.08722.pdf) | Salman et al | CNN             | 39.83%   |      |
@@ -579,6 +582,14 @@ A fast exact verifier.
   Jun 2019
 
   Huan Zhang, Hongge Chen, Chaowei Xiao, Bo Li, Duane Boning, Cho-Jui Hsieh
+  
+- (kReLU) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu)
+
+  (NeurIPS 2019)
+
+  Nov 2019
+
+  Gagandeep Singh, Rupanshu Ganvir, Markus Püschel, Martin Vechev
 
 **Linear Dual Space Relaxations**
 
@@ -769,7 +780,7 @@ A fast exact verifier.
 
   Maximilian Baader, Matthew Mirman, Martin Vechev
 
-**Other Approches**
+**Other Approaches**
 
 - [Provable Robustness of ReLU networks via Maximization of Linear Regions](https://arxiv.org/abs/1810.07481)
 
@@ -806,6 +817,14 @@ Note that many papers above can be generalized to activation functions beyond Re
   Feb 2019
 
   Chongli Qin, Krishnamurthy (Dj)Dvijotham, Brendan O'Donoghue, Rudy Bunel, Robert Stanforth, Sven Gowal, Jonathan Uesato, Grzegorz Swirszcz, Pushmeet Kohli
+  
+- (Geometric Perturbation) [Certifying Geometric Robustness of Neural Networks](https://www.sri.inf.ethz.ch/publications/balunovic2019geometric)
+
+  (NeurIPS 2019)
+
+  Nov 2019
+
+  Mislav Balunovic, Maximilian Baader, Gagandeep Singh, Timon Gehr, Martin Vechev
 
 ---
 
@@ -885,4 +904,4 @@ The following papers either apply the above approaches to specific domains, or d
 
 Maintained by Linyi.
 
-Last updated: Nov 8, 2019
+Last updated: Nov 14, 2019
