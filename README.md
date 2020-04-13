@@ -189,6 +189,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | CNN                | 32.04%   |  Practically reproducible verified error is about 28% - 29% according to Zhang et al |
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 29.21%   | pick the best number |
 | [Training Verified Learners with Learned Verifiers](https://arxiv.org/pdf/1805.10265.pdf) | Dvijotham et al  | Predictor-Verifier | 26.67%   |                                                              |
+| [Provably Robust Boosted Decision Stumps and Trees against Adversarial Attacks](https://arxiv.org/pdf/1906.03526.pdf) | Andriushchenko & Hein | Boosted trees | 25.31%   |                                                              |
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/654) | Li et al         | CNN                | 25.13%   |                                                              |
 | (Verification) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu) | Singh et al | ResNet | 24.5% | Evaluated on first 1,000 images |
 | [A Provable Defense for Deep Residual Networks](https://arxiv.org/pdf/1903.12519.pdf) | Mirman et al     | ResNet-Tiny        | 23.2%    |                                                              |
@@ -245,6 +246,7 @@ eps=1.58 is transformed from L-infty eps=0.1.
 | ------------------------------------------------------------ | ------------ | --------------- | -------- | ---- |
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 92.54%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al  | CNN             | 91.95%   |      |
+| [Provably Robust Boosted Decision Stumps and Trees against Adversarial Attacks](https://arxiv.org/pdf/1906.03526.pdf) | Andriushchenko & Hein | Boosted trees | 87.54%   | 
 | [Robustra: Training Provable Robust Neural Networks over Reference Adversarial Space](https://www.ijcai.org/proceedings/2019/0654.pdf) | Li et al     | small CNN       | 83.09%   |      |
 | (Verification) [Evaluating Robustness of Neural Networks with Mixed Integer Programming](https://arxiv.org/abs/1711.07356) | Tjeng et al  | large CNN       | 75.81%   |      |
 | (Verification) [Beyond the Single Neuron Convex Barrier for Neural Network Certification](https://www.sri.inf.ethz.ch/publications/singh2019krelu) | Singh et al | ConvBig | 73.6% | evaluated on first 1,000 images |
@@ -325,6 +327,7 @@ This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0
 | ------------------------------------------------------------ | ---------- | --------------- | -------- | ---- |
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al   | large CNN | 78.73%   | pick the best number |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | large CNN             | 77.63%   | pick the best number, reported by Zhang et al |
+| [Provably Robust Boosted Decision Stumps and Trees against Adversarial Attacks](https://arxiv.org/pdf/1906.03526.pdf) | Andriushchenko & Hein | Boosted trees | 76.83%   | 
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al | CNN             | 65.47%   |      |
 
 
@@ -852,6 +855,14 @@ The following papers either apply the above approaches to specific domains, or d
 
 **Tree Model**
 
+- [Provably Robust Boosted Decision Stumps and Trees against Adversarial Attacks](https://arxiv.org/abs/1906.03526)
+
+  (NeurIPS 2019, arxiv: 1906.03526)
+
+  Jun 2019
+
+  Maksym Andriushchenko, Matthias Hein
+  
 - [Robustness Verification of Tree-based Models](https://arxiv.org/abs/1906.03849)
 
   (NeurIPS 2019, arxiv: 1906.03849)
