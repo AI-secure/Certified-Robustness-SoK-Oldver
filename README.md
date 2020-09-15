@@ -73,7 +73,7 @@ Tighter provable robustness bound can be achieved by better robust training appr
 
 
 
-## [Scope of the Repo](scope-of-the-repo)
+## Scope of the Repo
 
 Current works mainly focus on image classification tasks with datasets MNIST, CIFAR10, ImageNet, FashionMNIST, and SVHN.
 
