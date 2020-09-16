@@ -12,7 +12,7 @@ Tighter provable robustness bound can be achieved by better robust training appr
 - We are happy to announce the FIRST large-scale study of representative certifiably robust defenses with interesting insights @ https://arxiv.org/abs/2009.04131! (It is also a useful paper list for certified robustness of DNNs)
 - We also release a unified toolbox **VeriGauge** for implementing robustness verification approaches conveniently with PyTorch: https://github.com/AI-secure/VeriGauge.
   Feel free to try it and give us feedback!
-- [**new**] We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the bottom.
+- [**new**] We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the [bottom](#taxnomy-tree).
 
 
 
@@ -69,7 +69,7 @@ Tighter provable robustness bound can be achieved by better robust training appr
   + [MNIST](#mnist-1)
     - [L-Infty](#l-infty-5)
       * [eps=0.3](#eps-03-1)
-- [Taxnomy Tree](#taxnomy-tree)
+- [Taxonomy Tree](#taxonomy-tree)
 
 
 
@@ -483,9 +483,11 @@ For comparison, here we cite numbers from MadryLab repositories for [MNIST chall
 
 
 
-## Taxnomy Tree
+## Taxonomy Tree
 
 ![Taxonomy Tree](https://github.com/AI-secure/Provable-Training-and-Verification-Approaches-Towards-Robust-Neural-Networks/blob/master/taxonomy_tree.jpg)
+
+Full introduction of these approaches is available at https://arxiv.org/abs/2009.04131.
 
 ---
 
