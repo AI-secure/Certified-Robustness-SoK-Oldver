@@ -12,7 +12,7 @@ Tighter provable robustness bound can be achieved by better robust training appr
 - We are happy to announce the FIRST large-scale study of representative certifiably robust defenses with interesting insights @ https://arxiv.org/abs/2009.04131! (It is also a useful paper list for certified robustness of DNNs)
 - We also release a unified toolbox **VeriGauge** for implementing robustness verification approaches conveniently with PyTorch: https://github.com/AI-secure/VeriGauge.
   Feel free to try it and give us feedback!
-- [**new**] We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the [bottom](#taxnomy-tree).
+- [**new**] We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the [bottom](#taxonomy-tree).
 
 
 
@@ -27,48 +27,48 @@ Tighter provable robustness bound can be achieved by better robust training appr
 - [Main Leaderboard](#main-leaderboard)
   + [ImageNet](#imagenet)
     - [L2](#l2)
-      * [eps = 0.2](#eps---02)
-      * [eps = 0.5](#eps---05)
-      * [eps = 1.0](#eps---10)
-      * [eps = 2.0](#eps---20)
-      * [eps = 3.0](#eps---30)
+      * eps = 0.2
+      * eps = 0.5
+      * eps = 1.0
+      * eps = 2.0
+      * eps = 3.0
     - [L-Infty](#l-infty)
-      * [eps=1/255](#eps-1-255)
-      * [eps=1.785/255](#eps-1785-255)
+      * eps=1/255
+      * eps=1.785/255
   + [CIFAR-10](#cifar-10)
     - [L2](#l2-1)
-      * [eps=0.14](#eps-014)
-      * [eps=0.25](#eps-025)
-      * [eps=0.5](#eps-05)
-      * [eps=1.0](#eps-10)
-      * [eps=1.5](#eps-15)
+      * eps=0.14
+      * eps=0.25
+      * eps=0.5
+      * eps=1.0
+      * eps=1.5
     - [L Infty](#l-infty)
-      * [eps=2/255](#eps-2-255)
-      * [eps=8/255](#eps-8-255)
+      * eps=2/255
+      * eps=8/255
   + [MNIST](#mnist)
     - [L2](#l2-2)
-      * [eps=1.58](#eps-158)
+      * eps=1.58
     - [L-Infty](#l-infty-1)
-      * [eps=0.1](#eps-01)
-      * [eps=0.3](#eps-03)
-      * [eps=0.4](#eps-04)
+      * eps=0.1
+      * eps=0.3
+      * eps=0.4
   + [SVHN](#svhn)
     - [L2](#l2-3)
-      * [eps=0.1](#eps-01-1)
-      * [eps=0.2](#eps-02)
+      * eps=0.1
+      * eps=0.2
     - [L-Infty](#l-infty-2)
-      * [eps=0.01](#eps-001)
-      * [eps=8/255](#eps-8-255-1)
+      * eps=0.01
+      * eps=8/255
   + [Fashion-MNIST](#fashion-mnist)
     - [L-Infty](#l-infty-3)
-      * [eps=0.1](#eps-01-2)
+      * eps=0.1
 - [Reference: Empirical Robustness](#reference--empirical-robustness)
   + [CIFAR-10](#cifar-10-1)
     - [L-Infty](#l-infty-4)
-      * [eps=8/255](#eps-8-255-2)
+      * eps=8/255
   + [MNIST](#mnist-1)
     - [L-Infty](#l-infty-5)
-      * [eps=0.3](#eps-03-1)
+      * eps=0.3
 - [Taxonomy Tree](#taxonomy-tree)
 
 
@@ -493,4 +493,4 @@ Full introduction of these approaches is available at https://arxiv.org/abs/2009
 
 Maintained by Linyi.
 
-Last updated: Sept 15, 2020
+Last updated: Sept 24, 2020
