@@ -418,7 +418,7 @@ This is a MNIST-like dataset. Images are 28 x 28 and grayscale. Values are in [0
 
 | Defense/Verification                                         | Author                | Model Structure | RACC   |                                               |
 | ------------------------------------------------------------ | --------------------- | --------------- | ------ | --------------------------------------------- |
-| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al           | large CNN       | 78.73% | pick the best number                          |
+| [Towards Stable and Efficient Training of Verifiably Robust Neural Networks (arXiv:v1)](https://arxiv.org/pdf/1906.06316v1.pdf) | Zhang et al           | large CNN       | 78.73% | pick the best number                          |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al           | large CNN       | 77.63% | pick the best number, reported by Zhang et al |
 | [Provably Robust Boosted Decision Stumps and Trees against Adversarial Attacks](https://arxiv.org/pdf/1906.03526.pdf) | Andriushchenko & Hein | Boosted trees   | 76.83% |                                               |
 | [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) | Wong et al            | CNN             | 65.47% |                                               |
