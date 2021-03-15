@@ -279,7 +279,7 @@ All above approaches use Randomized Smoothing (Cohen et al) to derive certificat
 
 | Defense/Verification                                         | Author                | Model Structure     | RACC   |                                                              |
 | ------------------------------------------------------------ | --------------------- | ------------------- | ------ | ------------------------------------------------------------ |
-| [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al      | Small CNN           | 39.88% |                                                              |
+| *[Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al      | Small CNN           | 39.88% |  May not reproducible. The normalization effect seems not considered in their [code](https://github.com/pawelmorawiecki/Fast-and-stable-IBP/blob/master/extra_loss_CIFAR_large_8_255.ipynb)   |
 | [Differentiable Abstract Interpretation for Provably Robust Neural Networks](http://proceedings.mlr.press/v80/mirman18b/mirman18b.pdf) | Mirman et al          | Small CNN           | 37.4%  | ~7.65/255, only evaluated from 500 samples among all 10,000  |
 | [Towards Stable and Efficient Training of Verifiably Robust Neural Networks](https://arxiv.org/pdf/1906.06316.pdf) | Zhang et al           | large CNN(DM-large) | 33.06% | pick the best number                                         |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al           | CNN                 | 32.04% | Practically reproducible verified error is about 28% - 29% according to Zhang et al |
@@ -414,7 +414,7 @@ The image size is 32 x 32 x 3 (3-channel in color). Pixel colors in [0, 255]. Wh
 | Defense/Verification                                         | Author           | Model Structure | RACC   |                            |
 | ------------------------------------------------------------ | ---------------- | --------------- | ------ | -------------------------- |
 | [On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1810.12715.pdf) | Gowal et al      | large CNN       | 47.63% | Report by Morawiecki et al |
-| [Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | small CNN       | 46.03% |                            |
+| *[Fast and Stable Interval Bounds Propagation for Training Verifiably Robust Models](https://arxiv.org/pdf/1906.00628.pdf) | Morawiecki et al | small CNN       | 46.03% |   May not reproducible. The normalization effect seems not considered in their [code](https://github.com/pawelmorawiecki/Fast-and-stable-IBP/blob/master/extra_loss_SVHN_medium-1.py)      |
 
 
 
