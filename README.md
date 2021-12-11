@@ -7,9 +7,8 @@ Tighter provable robustness bound can be achieved by better robust training appr
 
 
 
-**TODO**:
-
-- Update the leaderboard with advances starting from Sept 2020 (will be done in two weeks).
+**Updates:(Dec 2021)**
+We included the latest baselines and substantially improved the readability. Please [**browse this page for the new version**](https://sokcertifiedrobustness.github.io/leaderboard/)!
 
 
 
@@ -18,7 +17,7 @@ Tighter provable robustness bound can be achieved by better robust training appr
 - We are happy to announce the FIRST large-scale study of representative certifiably robust defenses with interesting insights @ https://arxiv.org/abs/2009.04131! (It is also a useful paper list for certified robustness of DNNs)
 - We also release a unified toolbox **VeriGauge** for implementing robustness verification approaches conveniently with PyTorch: https://github.com/AI-secure/VeriGauge.
   Feel free to try it and give us feedback!
-- [**new**] We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the [bottom](#taxonomy-tree).
+- We include a taxnomy tree of representative approaches in this field (adapted from our large-scale study paper) at the [bottom](#taxonomy-tree) and [here](https://sokcertifiedrobustness.github.io).
 
 
 
