@@ -5,7 +5,19 @@ Note that the training methods towards robust networks are usually connected wit
 
 Tighter provable robustness bound can be achieved by better robust training approaches, and tighter robustness verification approaches, or jointly.
 
+**Updates:(Jun 2022)**
+The accompanying [SoK paper](https://arxiv.org/abs/2009.04131) is accepted by IEEE S&P (Oakland) 2023!
 
+If you find this repo helpful, please consider cite our paper:
+```
+@inproceedings{li2023sok,
+    title={SoK: Certified Robustness for Deep Neural Networks},
+    author={Linyi Li and Tao Xie and Bo Li},
+    booktitle={44th {IEEE} Symposium on Security and Privacy, {SP} 2023, San Francisco, CA, USA, 22-26 May 2023},
+    publisher={IEEE},
+    year={2023}
+}
+```
 
 **Updates:(Dec 2021)**
 We included the latest baselines and substantially improved the readability. Please [**browse this page for the new version**](https://sokcertifiedrobustness.github.io/leaderboard/)!
