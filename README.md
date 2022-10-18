@@ -1,3 +1,7 @@
+## This repo is out of maintenance. [**Browse the new leaderboard from here**](https://sokcertifiedrobustness.github.io/leaderboard/)! New repo link: https://github.com/sokcertifiedrobustness/sokcertifiedrobustness.github.io.
+
+
+
 # Provable Training and Verification Approaches Towards Robust Neural Networks
 Recently, provable (i.e. certified) adversarial robustness training and verification methods have demonstrated their effectiveness against adversarial attacks. In contrast to empirical robustness and empirical adversarial attacks, the provable robustness verification provides rigorous lower bound of robustness for a given neural network, such that **no** existing or future attacks will attack further. 
 
@@ -18,9 +22,6 @@ If you find this repo helpful, please consider cite our paper:
     year={2023}
 }
 ```
-
-**Updates:(Dec 2021)**
-We included the latest baselines and substantially improved the readability. Please [**browse this page for the new version**](https://sokcertifiedrobustness.github.io/leaderboard/)!
 
 
 
